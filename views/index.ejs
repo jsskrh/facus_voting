@@ -1,0 +1,24 @@
+<%- include("partials/header") %> 
+
+<div class="container">
+    <div class="d-flex justify-content-between mt-4 border-bottom">
+        <div>Welcome <%= currentUser.username %></div>
+        <% if (currentUser.isAdmin) { %>
+            <a href="#">Admin</a>
+        <% } %>
+    </div>
+    <div class="pt-4">
+        <span class="h3">FACUS President</span>
+        <div class="d-flex justify-content-center">
+            <div class="votes col-md-4 col-12 pt-4">
+                <div class="border">
+                    <a href="#"><div class="d-block border-bottom p-3 active">Remmy</div></a>
+                    <a href="#"><div class="d-block border-bottom p-3">Julian</div></a>
+                    <a href="#"><div class="d-block p-3">Seyi</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer") %> 

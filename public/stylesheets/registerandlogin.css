@@ -1,0 +1,227 @@
+.login-register-form-image {
+    height: 100vh;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.login-register-form-image img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.login-register-form {
+    background-color: #f4f7f6;
+    padding: 35px;
+}
+
+.login-register-form .box-top p {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.login-register-form .box-center .form-control {
+    height: 60px;
+    border-radius: 0;
+    border-color: #DBE0DF;
+    margin-bottom: 20px;
+    outline: none !important;
+}
+
+.login-register-form.register-form .box-center .form-control {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.login-register-form .box-center .input-validation-error {
+    border-color: red;
+}
+
+.login-register-form .box-center .validation-message,
+.login-register-form .box-center .validation-message span {
+    font-size: 13px;
+    color: #D14836;
+}
+
+.login-register-form .box-center .form-control:active, 
+.login-register-form .box-center .form-control:focus,
+.login-register-form .box-center button:active,
+.login-register-form .box-center button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.login-register-form .box-center .form-control::placeholder {
+    color: #DBE0DF;
+    font-size: 15px;
+}
+
+.login-register-form .box-center p span {
+    font-size: 15px;
+}
+
+.login-register-form .box-center p span a,
+.login-register-form .box-bottom a,
+.login-register-form .box-center .bottom-section > .col > p > a,
+.login-register-form .checkbox label .labelText a {
+    color: #49c5b6;
+}
+
+.login-register-form .box-center .forgot-text {
+    font-size: 12px;
+}
+
+.login-register-form .box-center .forgot-text-p {
+    line-height: 120%;
+}
+
+.login-register-form .box-center p span a:hover,
+.form-group label a:hover,
+.login-register-form .box-bottom a:hover,
+.login-register-form .box-center .bottom-section > .col > p > a:hover {
+    color: #202121;
+}
+
+.login-register-form .box-center .checkbox {
+    margin-top: 20px;
+}
+
+.login-register-form .box-center .checkbox label {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #707070;
+}
+
+.login-register-form .box-center .bottom-section button {
+    background-color: #49c5b6;
+    border-radius: 0;
+    padding: 15px;
+}
+
+.login-register-form .box-center .bottom-section button:hover {
+    background-color:rgba(0, 0, 0, 0.3);
+}
+
+.login-register-form .box-center .bottom-section button span {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.login-register-form .box-bottom, 
+.login-register-form .box-center .bottom-section > .col > p > a {
+    font-size: 12px;
+}
+
+.login-register-form .box-bottom a, 
+.login-register-form .box-center .bottom-section > .col > p > a {
+    text-decoration: underline;
+}
+
+.form-group .has-error {
+    position: relative;
+}
+
+.form-group .has-error::before {
+    content: '!';
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #D14836;
+    border-radius: 50%;
+    line-height: 19px;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    color: #D14836;
+    background-color: transparent;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.form-group .checkbox {
+    cursor: pointer;
+    position: relative;
+}
+
+.form-group .checkbox.has-error::before {
+    top: 0;
+    right: 0;
+}
+
+.form-group .checkbox input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+.form-group .checkbox .checkbox-custom {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    height: 19px;
+    width: 19px;
+    background-color: #DBE0DF;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.form-group .checkbox input:checked ~ .checkbox-custom {
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity:1;
+}
+
+.form-group .checkbox .checkbox-custom::after {
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 12px;
+    height: 0px;
+    width: 0px;
+    border: 2px solid #202121;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity:1;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+}
+
+.form-group .checkbox input:checked ~ .checkbox-custom::after {
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+    opacity:1;
+    left: 6px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    border: 2px solid #202121;
+    border-top: none;
+    border-left: none;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.form-group .checkbox label span.labelText {
+    padding-left: 25px;
+    cursor: pointer;
+}

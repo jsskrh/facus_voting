@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACUS Voting</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/registerandlogin.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+<body class="test">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 login-register-form">
+                <div class="row box-top">
+                    <div class="col">
+                        <p class="text-center">
+                            <a href="/">Welcome to FACUS Voting</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row box-center d-flex justify-content-center pt-3">
+                    <div class="col-9">
+                        <div class="row top-section">
+                            <div class="col">
+                                <p>
+                                    <span class="font-weight-bold">Sign in to continue</span>
+                                    <span class="float-right">Not a menber yet? <a href="/register">Register now</a></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row bottom-section pt-3">
+                            <div class="col">
+                                <% if (errors.username) { %>
+                                    <p class="validation-message">
+                                        <span><%= errors.username.msg %></span>
+                                    </p>
+                                <% } else if (errors.password) { %>
+                                    <p class="validation-message">
+                                        <span><%= errors.password.msg %></span>
+                                    </p>
+                                <% } %>
+                                <form action="/login" method="POST">
+                                    <div class="form-group" id="auth-form">
+                                        <div class="input-grouping">
+                                            <input class="form-control" type="text" placeholder="Username" name="username">
+                                            <% if (errors.username) { %>
+                                                <div class="validation-error"></div>
+                                            <% } %>
+                                        </div>
+                                        <div class="input-grouping">
+                                            <input class="form-control" type="password" placeholder="Password" name="password" id="password" minlength="5" maxlength="16">
+                                            <% if (errors.password) { %>
+                                                <div class="validation-error"></div>
+                                            <% } %>
+                                        </div>
+                                        <div class="checkbox mb-3">
+                                            <label for="">
+                                                <input type="checkbox" value="remenber-me"> 
+                                                <span class="checkbox-custom"></span>
+                                                <span class="labelText">Keep me logged in</span>
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-lg btn-block">
+                                            <span>Login now</span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <p class="text-center">
+                                    <a href="/forgot">Forgot your password</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center box-bottom pt-5">
+                    <div class="col-8 text-center">
+                        © 2020 FACUS Voting. All rights reserved.<br>
+                        By signing up, I agree to Dickbutt<br>
+                        <a href="#">Terms and Services</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if($("div").is(".validation-error")) {
+                var formBox = $(".validation-error").prev()
+                formBox.addClass("input-validation-error");
+                formBox.parent().addClass("has-error");
+                $("input.input-validation-error").on("click", function() {
+                    $(this).removeClass("input-validation-error");
+                    $(this).parent().removeClass("has-error");
+                });
+                $(".checkbox").on("click", function() {
+                    $(this).removeClass("has-error");
+                });
+            }
+            $('.checkbox').on('click', function(){
+                var checkbox = $(this).children('label').children('input[type="checkbox"]');
+                checkbox.prop('checked', !checkbox.prop('checked'));
+            });
+        })
+    </script>
+</body>
+</html>
