@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between mt-4 border-bottom">
         <div>Welcome <%= currentUser.username %></div>
         <% if (currentUser.isAdmin) { %>
-            <a href="#">Admin</a>
+            <a href="/admin">Admin</a>
         <% } %>
     </div>
     <div class="pt-4">
@@ -17,6 +17,11 @@
                     <a href="#"><div class="d-block p-3">Seyi</div></a>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="fixed-bottom">
+        <div class="float-right mr-5 mb-3">
+            <a href="/logout">Logout</a>
         </div>
     </div>
 </div>

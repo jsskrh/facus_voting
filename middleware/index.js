@@ -56,6 +56,14 @@ middlewareObj.isLoggedIn = (req, res, next) => {
     res.redirect("/login");
 }
 
+middlewareObj.isAdmin = (req, res, next) => {
+    if(req.user.isAdmin){
+        return next();
+    }
+    req.flash("error", "You ncannot to do that");
+    res.redirect("/");
+}
+
 middlewareObj.isCurrentUser = (req, res, next) => {
     if(req.params.username == req.user.username) {
         next();

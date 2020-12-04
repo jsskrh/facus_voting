@@ -11,6 +11,10 @@ router.get("/", middleware.isLoggedIn, function(req, res){
     res.render("index");
 });
 
+router.get("/admin", middleware.isLoggedIn, middleware.isAdmin, (req, res) => {
+    res.render("admin");
+});
+
 // Show signup form
 router.get("/register", function(req, res){
     var errors = {};
@@ -54,11 +58,11 @@ router.post("/login", middleware.loginValidation, middleware.handleLoginValidati
 }), function(req, res){
 });
 
-/*// Handle logout
+// Handle logout
 router.get("/logout", function(req, res){
     req.logout();
     req.flash("success", "Logged you out!");
     res.redirect("/");
-});*/
+});
 
 module.exports = router
